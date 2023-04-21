@@ -3,6 +3,7 @@ import facebook from "@/public/assets/icons8-facebook.svg";
 import instagram from "@/public/assets/icons8-instagram.svg";
 import twitter from "@/public/assets/icons8-twitter.svg";
 import Image from "next/image";
+import Link from "next/link"
 
 import localFont from "@next/font/local";
 
@@ -36,11 +37,19 @@ export default function Footer() {
               data-aos-duration="2000"
               className="flex space-x-10 items-center md:justify-start justify-center"
             >
+<Link href="https://github.com/hamzandev">
               <Image src={github} alt="github" />
-              <Image src={twitter} alt="twitter" />
-              <Image src={facebook} alt="facebook" />
-              <Image src={instagram} alt="instagram" />
-            </div>
+              </Link>
+<Link href="https://twitter.com/hamzandev">
+<Image src={twitter} alt="twitter" />
+              </Link>
+<Link href="https://facebook.com/hamzanwahyu.me">
+<Image src={facebook} alt="facebook" />
+              </Link>
+<Link href="https://instagram.com/hamzanwahyu.me">
+<Image src={instagram} alt="instagram" />
+            </Link>
+</div>
             <p
               data-aos="fade-up"
               data-aos-duration="2500"
