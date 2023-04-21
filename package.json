@@ -1,5 +1,5 @@
 {
-  "name": "my-app",
+  "name": "ied-mubarak",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,12 +9,28 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/font": "^13.2.4",
+    "@prisma/client": "^4.13.0",
+    "@types/aos": "^3.0.4",
     "@types/node": "18.15.11",
     "@types/react": "18.0.33",
     "@types/react-dom": "18.0.11",
+    "aos": "^2.3.4",
+    "daisyui": "^2.51.5",
+    "insomnia": "^0.0.1",
     "next": "13.2.4",
+    "nodemailer": "^6.9.1",
+    "prisma": "^4.13.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.43.9",
+    "react-icons": "^4.8.0",
+    "recoil": "^0.7.7",
     "typescript": "5.0.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.3.1"
   }
 }
