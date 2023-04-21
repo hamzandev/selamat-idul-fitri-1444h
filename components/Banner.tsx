@@ -27,7 +27,7 @@ export default function Banner() {
         <h3
           data-aos="fade-up"
           data-aos-duration="1500"
-          className={`${siti.className} md:text-6xl text-4xl md:-mt-5 text-white md:w-7/12 leading-relaxed text-center md:text-end md:px-0 px-3`}
+          className={`${siti.className} md:text-6xl text-4xl text-white md:w-7/12 leading-loose text-center md:text-end md:px-0 px-3`}
         >
           Selamat Hari Raya Idul Fitri 1444 H
         </h3>
