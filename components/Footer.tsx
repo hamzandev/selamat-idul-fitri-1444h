@@ -34,7 +34,7 @@ export default function Footer() {
             <div
               data-aos="fade-up"
               data-aos-duration="2000"
-              className="flex gap-10 items-center md:justify-start justify-center"
+              className="flex space-x-10 items-center md:justify-start justify-center"
             >
               <Image src={github} alt="github" />
               <Image src={twitter} alt="twitter" />
