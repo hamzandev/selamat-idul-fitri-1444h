@@ -39,7 +39,7 @@ export default function SelamatHariRaya() {
         <div className="grid gap-5 mx-auto text-lg text-gray-600 md:w-6/12">
           <p data-aos="fade-up" data-aos-duration="1500" className="mb-5">
             Perkataan tajam sering terlontar menyakiti hati. Perbuatan buruk
-            seing terjadi tanpa disadari. Di hari yang Fitri ini, izinkan kami
+            sering terjadi tanpa disadari. Di hari yang Fitri ini, izinkan kami
             sekeluarga memohon maaf sebesar-besarnya atas semua kesalahan yang
             terjadi. Semoga Allah SWT menerima semua amal Ibadah kita di bulan
             Ramadhan ini.
