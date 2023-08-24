@@ -22,14 +22,14 @@ export default function Keluarga() {
   const ruter = useSearchParams();
 
   const name = ruter.get("name")?.split("+").join(" ");
+  const image = ruter.get("image");
 
   return (
     <div
       className={`keluarga hero min-h-screen bg-green-700 ${style.bgKeluarga}`}
     >
-      <div className="hero-overlay bg-gradient-to-tr from-gray-200/20 to-green-300/20 bg-opacity-10"></div>
-      <div className="hero-content grid md:grid-cols-2 text-center items-center text-neutral-content">
-        <div className="typography md:order-1 order-2 md:mt-0 mt-20 md:text-start text-center grid gap-5">
+      <div className="hero-content flex md:flex-row flex-col justify-center md:gap-10 container mx-auto text-center items-center text-neutral-content">
+        <div className="typography md:w-3/5 md:order-1 order-2  md:text-start text-center grid gap-5">
           <h3
             data-aos="fade-up"
             className={`md:text-4xl text-3xl ${siti.className} text-gray-100`}
@@ -46,11 +46,22 @@ export default function Keluarga() {
             mengucapkan Selamat Hari Raya Idul Fitri 1444 H, Mohon Maaf Lahir
             dan Batin 💖🥰
           </p>
-          <SendWhatsapp>Balas Ucapan</SendWhatsapp>
+          <div className="md:mt-0 mt-3">
+            <SendWhatsapp>Balas Ucapan</SendWhatsapp>
+          </div>
         </div>
 
-        <div data-aos="fade-up" data-aos-duration="2000" className="image">
-          <Image src={keluarga} alt="keluarga"></Image>
+        <div
+          data-aos="fade-up"
+          data-aos-duration="2000"
+          className="image aspect-square md:w-2/5 md:p-10 rounded-full overflow-hidden md:m-20 m-8 border-gray-200 border-4 outline-dotted outline-offset-8 outline-4 outline-gray-100 mx-auto md:mx-0"
+        >
+          <Image
+            src={keluarga}
+            alt="keluarga"
+            className="w-full h-full object-cover"
+          />
+          {/* <img src={image as string} alt="user iamg" /> */}
         </div>
       </div>
     </div>

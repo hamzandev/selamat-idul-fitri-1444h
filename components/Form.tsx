@@ -38,13 +38,6 @@ const formSchema = z.object({
 // 2. Define a submit handler.
 
 const MyForm = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    whatsapp: "",
-    message:
-      "Perkataan tajam sering terlontar menyakiti hati. Perbuatan buruk sering terjadi tanpa disadari. Di hari yang Fitri ini, izinkan kami sekeluarga memohon maaf sebesar-besarnya atas semua kesalahan yang terjadi. Semoga Allah SWT menerima semua amal Ibadah kita di bulan Ramadhan ini.",
-  });
-
   function onSubmit(values: z.infer<typeof formSchema>) {
     const data = {
       name: values.name.trim().split(" ").join("+"),
@@ -75,7 +68,7 @@ const MyForm = () => {
 
   return (
     <div
-      className={`min-h-screen flex items-center justify-center ${style.bgBanner} px-5 flex-col`}
+      className={`min-h-screen py-20 flex items-center justify-center ${style.bgBanner} px-5 flex-col`}
     >
       <Form {...form}>
         {isShow ? (
@@ -135,6 +128,7 @@ const MyForm = () => {
                 </FormItem>
               )}
             />
+
             <FormField
               control={form.control}
               name="message"
