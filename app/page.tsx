@@ -21,9 +21,9 @@ export default function Home({ searchParams }: Props) {
       <InitAOS>
         {/* <div>{JSON.stringify(searchParams)}</div> */}
         <div>
-          {!searchParams?.name &&
-          !searchParams?.whatsapp &&
-          !searchParams?.message ? (
+          {searchParams?.name == null &&
+          searchParams?.whatsapp == null &&
+          searchParams?.message == null ? (
             <MyForm />
           ) : (
             <>
