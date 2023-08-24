@@ -21,8 +21,19 @@ export default function Home({ searchParams }: Props) {
       <InitAOS>
         {/* <div>{JSON.stringify(searchParams)}</div> */}
         <div>
-          <MyForm />
-       
+          {!searchParams?.name ||
+          !searchParams.whatsapp ||
+          !searchParams.message ? (
+            <MyForm />
+          ) : (
+            <>
+              <Banner />
+              <Takbir />
+              <Keluarga />
+              <SelamatHariRaya />
+              <Footer />
+            </>
+          )}
         </div>
       </InitAOS>
     </>

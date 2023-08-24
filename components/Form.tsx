@@ -56,7 +56,8 @@ const MyForm = () => {
     };
     setIsShow((prev) => !prev);
     setUrl(
-      `https://ied-greeting-maker.vercel.app/?name=${data.name}&whatsapp=${data.whatsapp}&message=${data.message}`
+      `http://localhost:3000/?name=${data.name}&whatsapp=${data.whatsapp}&message=${data.message}`
+      // `https://ied-greeting-maker.vercel.app/?name=${data.name}&whatsapp=${data.whatsapp}&message=${data.message}`
     );
     console.log(values);
   }
