@@ -16,26 +16,44 @@ interface Props {
 
 // searchParams?: { [key: string]: string | string[] | undefined };
 export default function Home({ searchParams }: Props) {
-  return (
-    <>
-      <InitAOS>
-        {/* <div>{JSON.stringify(searchParams)}</div> */}
-        <div>
-          {!searchParams?.name ||
-          !searchParams.whatsapp ||
-          !searchParams.message ? (
-            <MyForm />
-          ) : (
-            <>
-              <Banner />
-              <Takbir />
-              <Keluarga />
-              <SelamatHariRaya />
-              <Footer />
-            </>
-          )}
-        </div>
-      </InitAOS>
-    </>
-  );
+  if (!searchParams?.name) {
+    if (!searchParams?.message) {
+      if (!searchParams?.message) {
+        return <MyForm />;
+      }
+    }
+  } else {
+    return (
+      <>
+        <Banner />
+        <Takbir />
+        <Keluarga />
+        <SelamatHariRaya />
+        <Footer />
+      </>
+    );
+  }
+
+  // return (
+  //   <>
+  //     <InitAOS>
+  //       {/* <div>{JSON.stringify(searchParams)}</div> */}
+  //       <div>
+  //         {!searchParams?.name ||
+  //         !searchParams.whatsapp ||
+  //         !searchParams.message ? (
+  //           <MyForm />
+  //         ) : (
+  //           <>
+  //             <Banner />
+  //             <Takbir />
+  //             <Keluarga />
+  //             <SelamatHariRaya />
+  //             <Footer />
+  //           </>
+  //         )}
+  //       </div>
+  //     </InitAOS>
+  //   </>
+  // );
 }
