@@ -21,11 +21,10 @@ export default function Home({ searchParams }: Props) {
       <InitAOS>
         {/* <div>{JSON.stringify(searchParams)}</div> */}
         <div>
-          {searchParams?.name == null &&
-          searchParams?.whatsapp == null &&
-          searchParams?.message == null ? (
-            <MyForm />
-          ) : (
+  {
+    if(searchParams?.name) {
+      if(searchParams?.whatsapp) {
+           if(searchParams?.message) {
             <>
               <Banner />
               <Takbir />
@@ -33,7 +32,12 @@ export default function Home({ searchParams }: Props) {
               <SelamatHariRaya />
               <Footer />
             </>
-          )}
+         } 
+      }
+      } else { 
+         <MyForm />
+      }
+          }
         </div>
       </InitAOS>
     </>
