@@ -1,3 +1,5 @@
+"use client";
+
 import Footer from "@/components/Footer";
 import SelamatHariRaya from "@/components/SelamatHariRaya";
 import Keluarga from "@/components/Keluarga";
@@ -5,6 +7,7 @@ import Takbir from "@/components/Takbir";
 import Banner from "@/components/Banner";
 import InitAOS from "@/components/InitAOS";
 import MyForm from "@/components/Form";
+import { useSearchParams } from "next/navigation";
 
 interface Props {
   searchParams?: {
@@ -15,45 +18,31 @@ interface Props {
 }
 
 // searchParams?: { [key: string]: string | string[] | undefined };
-export default function Home({ searchParams }: Props) {
-  if (!searchParams?.name) {
-    if (!searchParams?.message) {
-      if (!searchParams?.message) {
-        return <MyForm />;
-      }
-    }
-  } else {
-    return (
-      <>
-        <Banner />
-        <Takbir />
-        <Keluarga />
-        <SelamatHariRaya />
-        <Footer />
-      </>
-    );
-  }
+export default function Home() {
+  const ruter = useSearchParams();
+  const name = ruter.get("name");
+  const whatsapp = ruter.get("whatsapp");
+  const message = ruter.get("message");
+  console.log({ name, message, whatsapp });
 
-  // return (
-  //   <>
-  //     <InitAOS>
-  //       {/* <div>{JSON.stringify(searchParams)}</div> */}
-  //       <div>
-  //         {!searchParams?.name ||
-  //         !searchParams.whatsapp ||
-  //         !searchParams.message ? (
-  //           <MyForm />
-  //         ) : (
-  //           <>
-  //             <Banner />
-  //             <Takbir />
-  //             <Keluarga />
-  //             <SelamatHariRaya />
-  //             <Footer />
-  //           </>
-  //         )}
-  //       </div>
-  //     </InitAOS>
-  //   </>
-  // );
+  return (
+    <>
+      <InitAOS>
+        {/* <div>{JSON.stringify(searchParams)}</div> */}
+        <div>
+          {!name || !whatsapp || !message ? (
+            <MyForm />
+          ) : (
+            <>
+              <Banner />
+              <Takbir />
+              <Keluarga />
+              <SelamatHariRaya />
+              <Footer />
+            </>
+          )}
+        </div>
+      </InitAOS>
+    </>
+  );
 }

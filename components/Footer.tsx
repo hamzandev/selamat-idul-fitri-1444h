@@ -61,7 +61,7 @@ export default function Footer() {
           </div>
           <Link
             href={"/"}
-            className="px-6 py-2 animate-bounce fixed right-10 top-10 text-sm rounded-full bg-white w-max border-2 border-green-500 text-green-600"
+            className="px-6 py-2 animate-bounce fixed mx-auto md:left-10 md:mx-0 inset-x-0 md:top-10 top-5 text-sm rounded-full bg-white w-max border-2 border-green-500 text-green-600"
           >
             Buat Kartu Ucapanmu disini!
           </Link>
