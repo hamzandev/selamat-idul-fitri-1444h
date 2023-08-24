@@ -3,7 +3,7 @@ import facebook from "@/public/assets/icons8-facebook.svg";
 import instagram from "@/public/assets/icons8-instagram.svg";
 import twitter from "@/public/assets/icons8-twitter.svg";
 import Image from "next/image";
-import Link from "next/link"
+import Link from "next/link";
 
 import localFont from "@next/font/local";
 
@@ -37,19 +37,19 @@ export default function Footer() {
               data-aos-duration="2000"
               className="flex space-x-10 items-center md:justify-start justify-center"
             >
-<Link href="https://github.com/hamzandev">
-              <Image src={github} alt="github" />
+              <Link href="https://github.com/hamzandev">
+                <Image src={github} alt="github" />
               </Link>
-<Link href="https://twitter.com/hamzandev">
-<Image src={twitter} alt="twitter" />
+              <Link href="https://twitter.com/hamzandev">
+                <Image src={twitter} alt="twitter" />
               </Link>
-<Link href="https://facebook.com/hamzanwahyu.me">
-<Image src={facebook} alt="facebook" />
+              <Link href="https://facebook.com/hamzanwahyu.me">
+                <Image src={facebook} alt="facebook" />
               </Link>
-<Link href="https://instagram.com/hamzanwahyu.me">
-<Image src={instagram} alt="instagram" />
-            </Link>
-</div>
+              <Link href="https://instagram.com/hamzanwahyu.me">
+                <Image src={instagram} alt="instagram" />
+              </Link>
+            </div>
             <p
               data-aos="fade-up"
               data-aos-duration="2500"
@@ -59,6 +59,12 @@ export default function Footer() {
               H
             </p>
           </div>
+          <Link
+            href={"/"}
+            className="px-6 py-2 animate-bounce fixed right-10 top-10 text-sm rounded-full bg-white w-max border-2 border-green-500 text-green-600"
+          >
+            Buat Kartu Ucapanmu disini!
+          </Link>
         </div>
         <div className="flex md:text-end text-center text-white flex-col md:items-end items-center justify-between">
           <span data-aos="fade-up" className="md:text-lg font-semoibold">

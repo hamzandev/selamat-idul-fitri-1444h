@@ -2,6 +2,7 @@ import style from "@/app/page.module.css";
 
 import localFont from "@next/font/local";
 import Link from "next/link";
+import SendWhatsapp from "./SendWhatsapp";
 
 const siti = localFont({
   src: [
@@ -40,16 +41,7 @@ export default function Banner() {
           "Idul Fitri membawa harapan baru, pengampunan, dan kebahagiaan. Mari
           merayakan dengan orang terkasih dan memperkuat ikatan kita."
         </p>
-        <Link
-          data-aos="fade-up"
-          data-aos-duration="3000"
-          href={
-            "https://wa.me/6283129535479?text=Selamat+Hari+Raya+Idul+Fitri+1444+H+,Hamzan+Wahyudi!!"
-          }
-          className="border-2 border-green-600 btn bg-white/90 text-green-500 px-8 py-3 rounded-full"
-        >
-          Send WhatsApp
-        </Link>
+        <SendWhatsapp>Reply via WhatsApp</SendWhatsapp>
       </div>
     </div>
   );

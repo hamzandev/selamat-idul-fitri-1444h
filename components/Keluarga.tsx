@@ -1,8 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import keluarga from "@/public/assets/keluarga.svg";
 import style from "@/app/page.module.css";
 import localFont from "@next/font/local";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+import SendWhatsapp from "./SendWhatsapp";
 
 const siti = localFont({
   src: [
@@ -15,6 +19,10 @@ const siti = localFont({
 });
 
 export default function Keluarga() {
+  const ruter = useSearchParams();
+
+  const name = ruter.get("name")?.split("+").join(" ");
+
   return (
     <div
       className={`keluarga hero min-h-screen bg-green-700 ${style.bgKeluarga}`}
@@ -34,20 +42,11 @@ export default function Keluarga() {
             className="leading-relaxed md:w-10/12 text-xl text-gray-300"
           >
             Sabtu, 22 April 2023, sekaligus bertepatan dengan Hari Raya Idul
-            Fitri 1444 H. Saya, Hamzan Wahyudi berserta segenap keluarga
+            Fitri 1444 H. Saya, <b>{name}</b> berserta segenap keluarga
             mengucapkan Selamat Hari Raya Idul Fitri 1444 H, Mohon Maaf Lahir
             dan Batin 💖🥰
           </p>
-          <Link
-            data-aos="fade-up"
-            data-aos-duration="3000"
-            href={
-              "https://wa.me/6283129535479?text=Selamat+Hari+Raya+Idul+Fitri+1444+H+,Hamzan+Wahyudi!!"
-            }
-            className="btn inline-block md:mx-0 mx-auto px-8 py-3 bg-white border-2 border-green-600 uppercase rounded-full w-max text-green-500"
-          >
-            balas ucapan
-          </Link>
+          <SendWhatsapp>Balas Ucapan</SendWhatsapp>
         </div>
 
         <div data-aos="fade-up" data-aos-duration="2000" className="image">

@@ -1,7 +1,11 @@
+"use client";
+
 import style from "@/app/page.module.css";
 
 import localFont from "@next/font/local";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+import SendWhatsapp from "./SendWhatsapp";
 
 const siti = localFont({
   src: [
@@ -24,6 +28,11 @@ const selamet = localFont({
 });
 
 export default function SelamatHariRaya() {
+  const ruter = useSearchParams();
+
+  const message = ruter.get("message")?.split("+").join(" ");
+  const name = ruter.get("name")?.split("+").join(" ");
+
   return (
     <div
       className={`selamat-hari-raya hero items-start min-h-screen ${style.bgSelamat}`}
@@ -38,26 +47,15 @@ export default function SelamatHariRaya() {
         </h1>
         <div className="grid gap-5 mx-auto text-lg text-gray-600 md:w-6/12">
           <p data-aos="fade-up" data-aos-duration="1500" className="mb-5">
-            Perkataan tajam sering terlontar menyakiti hati. Perbuatan buruk
-            sering terjadi tanpa disadari. Di hari yang Fitri ini, izinkan kami
-            sekeluarga memohon maaf sebesar-besarnya atas semua kesalahan yang
-            terjadi. Semoga Allah SWT menerima semua amal Ibadah kita di bulan
-            Ramadhan ini.
+            {message}
           </p>
           <p data-aos="fade-up" data-aos-duration="2500" className="text-sm">
-            Oleh : Hamzan Wahyudi dan segenap keluarga
+            Oleh : {name} dan segenap keluarga
           </p>
 
-          <Link
-            data-aos="fade-up"
-            data-aos-duration="3000"
-            href={
-              "https://wa.me/6283129535479?text=Selamat+Hari+Raya+Idul+Fitri+1444+H+,Hamzan+Wahyudi!!"
-            }
-            className="btn px-8 py-3 uppercase rounded-full bg-green-600 text-white w-max inline-block mx-auto border-2 border-green-400"
-          >
-            Ucapkan via WhatsApp
-          </Link>
+          <center className="mt-10">
+            <SendWhatsapp>Ucapkan via WhatsApp</SendWhatsapp>
+          </center>
         </div>
       </div>
     </div>

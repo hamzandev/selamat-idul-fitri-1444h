@@ -4,16 +4,37 @@ import Keluarga from "@/components/Keluarga";
 import Takbir from "@/components/Takbir";
 import Banner from "@/components/Banner";
 import InitAOS from "@/components/InitAOS";
+import MyForm from "@/components/Form";
 
-export default function Home() {
+interface Props {
+  searchParams?: {
+    name?: string;
+    whatsapp?: string | number;
+    message?: string;
+  };
+}
+
+// searchParams?: { [key: string]: string | string[] | undefined };
+export default function Home({ searchParams }: Props) {
   return (
     <>
       <InitAOS>
-        <Banner />
-        <Takbir />
-        <Keluarga />
-        <SelamatHariRaya />
-        <Footer />
+        {/* <div>{JSON.stringify(searchParams)}</div> */}
+        <div>
+          {!searchParams?.name &&
+          !searchParams?.whatsapp &&
+          !searchParams?.message ? (
+            <MyForm />
+          ) : (
+            <>
+              <Banner />
+              <Takbir />
+              <Keluarga />
+              <SelamatHariRaya />
+              <Footer />
+            </>
+          )}
+        </div>
       </InitAOS>
     </>
   );
